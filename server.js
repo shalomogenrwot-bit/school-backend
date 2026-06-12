@@ -1,26 +1,4 @@
-app.get('/api/school-info', (req, res) => {
-  res.json({
-    success: true,
-    data: {
-      name: process.env.SCHOOL_NAME || "Apex Nursery and Primary School",
-      motto: process.env.SCHOOL_MOTTO || "With God We Build a Firm Foundation",
-      address: process.env.SCHOOL_ADDRESS || "Kawempe Ttula, Uganda",
-      phone: process.env.SCHOOL_PHONE || "+256 756 694 381",
-      email: process.env.SCHOOL_EMAIL || "apexschools@gmail.com"
-    }
-  });
-});app.get('/api/school-info', (req, res) => {
-  res.json({
-    success: true,
-    data: {
-      name: process.env.SCHOOL_NAME || "Apex Nursery and Primary School",
-      motto: process.env.SCHOOL_MOTTO || "With God We Build a Firm Foundation",
-      address: process.env.SCHOOL_ADDRESS || "Kawempe Ttula, Uganda",
-      phone: process.env.SCHOOL_PHONE || "+256 756 694 381",
-      email: process.env.SCHOOL_EMAIL || "apexschools@gmail.com"
-    }
-  });
-});const express = require('express');
+const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
@@ -58,16 +36,15 @@ app.get('/api/school-info', (req, res) => {
   res.json({
     success: true,
     data: {
-      name: "St. Mary's Academy",
-      motto: 'Excellence in Education',
-      address: '123 Education Lane',
-      phone: '+1 (555) 123-4567',
-      email: 'info@school.edu'
+      name: "Apex Nursery and Primary School",
+      motto: "With God We Build a Firm Foundation",
+      address: "Kawempe Ttula, Uganda",
+      phone: "+256 756 694 381",
+      email: "apexschools@gmail.com"
     }
   });
 });
 
 app.listen(PORT, () => {
-  console.log('School backend running on port ' + PORT);
-  console.log('http://localhost:' + PORT);
+  console.log('Apex School backend running on port ' + PORT);
 });
