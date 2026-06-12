@@ -9,6 +9,17 @@ app.get('/api/school-info', (req, res) => {
       email: process.env.SCHOOL_EMAIL || "apexschools@gmail.com"
     }
   });
+});app.get('/api/school-info', (req, res) => {
+  res.json({
+    success: true,
+    data: {
+      name: process.env.SCHOOL_NAME || "Apex Nursery and Primary School",
+      motto: process.env.SCHOOL_MOTTO || "With God We Build a Firm Foundation",
+      address: process.env.SCHOOL_ADDRESS || "Kawempe Ttula, Uganda",
+      phone: process.env.SCHOOL_PHONE || "+256 756 694 381",
+      email: process.env.SCHOOL_EMAIL || "apexschools@gmail.com"
+    }
+  });
 });const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
