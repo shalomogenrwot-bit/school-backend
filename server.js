@@ -50,10 +50,3 @@ app.get('/api/school-info', (req, res) => {
 app.listen(PORT, () => {
   console.log('Apex School backend running on port ' + PORT);
 });
-// In any component
-useEffect(() => {
-  fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/events`)
-    .then(res => res.json())
-    .then(data => console.log('✅ Connected!', data))
-    .catch(err => console.error('❌ Failed:', err));
-}, []);
