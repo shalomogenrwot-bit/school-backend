@@ -17,8 +17,9 @@ router.post('/', async (req, res) => {
     
     res.status(201).json({ success: true, message: 'Message sent successfully!' });
   } catch (error) {
-    res.status(500).json({ error: 'Failed to send message' });
-  }
+    console.error('Contact form error:', error);
+    res.status(500).json({ error: 'Failed to send message', detail: error.message });
+}
 });
 
 module.exports = router;

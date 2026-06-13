@@ -16,7 +16,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000'
+}));
 app.use(compression());
 app.use(morgan('dev'));
 app.use(express.json());
@@ -48,3 +50,10 @@ app.get('/api/school-info', (req, res) => {
 app.listen(PORT, () => {
   console.log('Apex School backend running on port ' + PORT);
 });
+// In any component
+useEffect(() => {
+  fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/events`)
+    .then(res => res.json())
+    .then(data => console.log('✅ Connected!', data))
+    .catch(err => console.error('❌ Failed:', err));
+}, []);
